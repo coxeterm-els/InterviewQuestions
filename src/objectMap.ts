@@ -50,23 +50,3 @@ export function buildMapOfObjectsInObject(
 
   return result;
 }
-
-// export function buildMapOfObjectsInObject(object: object): Map<string, object> {
-//   const map = new Map<string, object>();
-
-//   function buildMapRecursively(object: object, currentKey: string) {
-//     for (const key in object) {
-//       const newKey = currentKey ? `${currentKey}.${key}` : key;
-
-//       if (typeof object[key] === 'object') {
-//         buildMapRecursively(object[key], newKey);
-//       } else {
-//         map.set(newKey, object[key]);
-//       }
-//     }
-//   }
-
-//   buildMapRecursively(object, '');
-
-//   return map;
-// }
