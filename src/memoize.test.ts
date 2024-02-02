@@ -1,0 +1,24 @@
+import { memoize } from './memoize.js';
+import { assert, expect, test } from 'vitest';
+
+test('returns the cached result for the same arguments', () => {
+    const memoizedOperation = memoize(expensiveOperation);
+
+    console.log(memoizedOperation(1, 4));
+    console.log(memoizedOperation(1, 4));
+});
+
+test('works with functions that take different argument types', () => {
+    const memoizedOperation = memoize(expensiveOperation);
+
+    console.log(memoizedOperation(1, 4));
+    console.log(memoizedOperation(2, 4));
+    console.log(memoizedOperation(2, 4));
+    console.log(memoizedOperation(1, 4));
+});
+
+
+function expensiveOperation(x: number, y: number): number {
+    console.log(`Calculating ${x} + ${y}`);
+    return x + y;
+}
