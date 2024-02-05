@@ -19,6 +19,5 @@ test('works with functions that take different argument types', () => {
 
 
 function expensiveOperation(x: number, y: number): number {
-    console.log(`Calculating ${x} + ${y}`);
     return x + y;
 }
